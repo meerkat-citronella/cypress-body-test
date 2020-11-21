@@ -21,7 +21,7 @@ document.body.parentNode.insertBefore(insertionPoint, document.body);
 ReactDOM.render(
   <React.StrictMode>
     <OutBody />
-  </React.StrictMode>,
+  </React.StrictMode>, // <---- cy.contains() won't be able to locate the text in <OutBody />
   insertionPoint
 );
 
