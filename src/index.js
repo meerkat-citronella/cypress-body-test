@@ -1,14 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 
+import OutBody from "./OutBody";
+import InBody from "./InBody";
+
+// render inside of the <body> element
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <InBody />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
+);
+
+// render outside of the <body> element
+const insertionPoint = document.createElement("div");
+insertionPoint.id = "insertion-point";
+document.body.parentNode.insertBefore(insertionPoint, document.body);
+ReactDOM.render(
+  <React.StrictMode>
+    <OutBody />
+  </React.StrictMode>,
+  insertionPoint
 );
 
 // If you want to start measuring performance in your app, pass a function
